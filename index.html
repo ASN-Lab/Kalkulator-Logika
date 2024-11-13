@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Logika Matematika</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Logika Matematika</h1>
+        <div>
+            <label for="operand1">Operand 1:</label>
+            <select id="operand1">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <div>
+            <label for="operand2">Operand 2:</label>
+            <select id="operand2">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+        <div>
+            <label for="operation">Operasi:</label>
+            <select id="operation">
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+                <option value="NOT">NOT</option>
+                <option value="IMPLIKASI">IMPLIKASI</option>
+            </select>
+        </div>
+        <button onclick="hitung()">Hitung</button>
+        <h2>Hasil: <span id="result">-</span></h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
