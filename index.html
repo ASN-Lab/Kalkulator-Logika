@@ -9,24 +9,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Kalkulator Logika Matematika | Logika Matematika</h1>
+    <h1>Kalkulator Logika Matematika | Kelompok 7</h1>
 
     <div class="container">
-        <div>
+        <div class="premis">
             <label for="operand1">Premis 1:</label>
             <select id="operand1">
                 <option value="true">True</option>
                 <option value="false">False</option>
             </select>
-        </div>
-        <div>
+
             <label for="operand2">Premis 2:</label>
             <select id="operand2">
                 <option value="true">True</option>
                 <option value="false">False</option>
             </select>
         </div>
-        <div>
+        <div class="operasi">
             <label for="operation">Operasi:</label>
             <select id="operation">
                 <option value="AND">AND (∧)</option>
@@ -36,9 +35,11 @@
                 <option value="BIIMPLIKASI">BIIMPLIKASI (↔)</option>
                 <option value="EXCLUSIVE OR">EXCLUSIVE OR (⊕)</option>
             </select>
+            <button onclick="hitung()">Hitung</button>
         </div>
-        <button onclick="hitung()">Hitung</button>
-        <h2>Hasil: <span id="result">-</span></h2>
+        <div class="result">
+            <h2>Hasil <br> <span id="result">-</span></h2>
+        </div>
     </div>
 
     <script src="script.js"></script>
