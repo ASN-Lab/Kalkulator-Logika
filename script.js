@@ -36,15 +36,3 @@ document.getElementById('operation').addEventListener('change', function() {
         labelOperand2.style.display = 'block'; // Tampilkan label operand2
     }
 });
-
-document.querySelectorAll('select').forEach(select => {
-    select.addEventListener('focus', () => {
-        select.style.backgroundColor = '#ffaf59'; // Ganti warna latar belakang saat fokus
-        select.style.color = 'black'; // Ganti warna teks saat fokus
-    });
-
-    select.addEventListener('blur', () => {
-        select.style.backgroundColor = '#FFDBB5'; // Kembali ke warna asli saat tidak fokus
-        select.style.color = '#603F26'; // Kembali ke warna asli saat tidak fokus
-    });
-});
