@@ -2,7 +2,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #FFEAC5;
     color: #603F26;
-    padding: 50px;
+    padding: 20px; /* Mengurangi padding untuk perangkat kecil */
 }
 
 h1 {
@@ -11,59 +11,71 @@ h1 {
 }
 
 .container {
-    max-width: 1600px;
     display: flex;
-    padding: 50px;
+    flex-direction: column; /* Mengubah menjadi kolom untuk perangkat kecil */
+    max-width: 900px;
+    padding: 20px; /* Mengurangi padding untuk perangkat kecil */
     gap: 25px;
     background: #603F26;
     border: black;
     border-radius: 25px;
     box-shadow: 0 0 25px rgb(255, 255, 255);
+    margin: auto; /* Centering the container */
 }
 
-.premis {
-    width: 400px;
+.premis, .operasi {
+    width: 100%; /* Mengubah lebar menjadi 100% */
 }
 
-.operasi {
-    width: 400px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-label {
+.premis label, .operasi label {
     display: block;
     color: #FFDBB5;
     margin: 10px 0 5px;
 }
 
-select {
-    width: 100%;
-    text-align: center;
+.premis select, .operasi select, .operasi button {
+    width: 100%; /* Mengubah lebar menjadi 100% */
     padding: 10px;
-    border: 10px;
-    border-color: black;
-    cursor: pointer;
-}
-
-
-button {
-    width: 400px;
-    height: 25px;
     background-color: #FFDBB5;
-    color: #603F26;
-    border: none;
-    border-radius: 5px;
+    color: black;
+    border: 3px solid black; 
+    border-radius: 25px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #6C4E31;
-    color: #FFDBB5;
-}
-
-.hasil {
     text-align: center;
-    color: #FFDBB5;
+}
+
+.premis option, .operasi button {
+    background-color: #FFDBB5;
+}
+
+.premis option:hover, .operasi button:hover {
+    background-color: #ffaf59;
+}
+
+.operasi button {
+    height: 50px;
+    margin-top: 25px;
+    text-decoration: double;
+}
+
+.result {
+    width: 100%; /* Mengubah lebar menjadi 100% */
+    max-width: 150px; /* Menjaga lebar maksimum */
+    text-align: center;
+    background-color: #FFDBB5;
+    color: black;
+    border: 3px solid black; 
+    border-radius: 25px;
+    padding: 5%;
+    margin: auto; /* Centering the result */
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row; /* Mengubah kembali menjadi baris untuk perangkat lebih besar */
+    }
+    .premis, .operasi {
+        width: 300px; /* Kembali ke lebar tetap untuk perangkat lebih besar */
+    }
 }
