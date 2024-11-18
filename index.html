@@ -12,34 +12,42 @@
     <h1>Kalkulator Logika Matematika Kelompok 7</h1>
 
     <div class="container">
-        <div class="premis">
-            <label for="operand1">Premis 1:</label>
-            <select id="operand1">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
+        <div class="utama">
+            <div class="premis">
+                <label for="operand1">Premis 1:</label>
+                <select id="operand1">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            
+                <label for="operand2" id="labelOperand2">Premis 2:</label>
+                <select id="operand2">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+            <div class="operasi">
+                <label for="operation">Operasi:</label>
+                <select id="operation">
+                    <option value="AND">AND (∧)</option>
+                    <option value="OR">OR (∨)</option>
+                    <option value="NOT">NOT (¬)</option>
+                    <option value="IMPLIKASI">IMPLIKASI (→)</option>
+                    <option value="BIIMPLIKASI">BIIMPLIKASI (↔)</option>
+                    <option value="EXCLUSIVE OR">EXCLUSIVE OR (⊕)</option>
+                </select>
+                <div class="opsi">
+                    <button id="deleteButton" onclick="clearResult()">Hapus</button>
+                    <button onclick="hitung()">Hitung</button>
+                </div>
+            </div>
+        </div>
+
+
         
-            <label for="operand2" id="labelOperand2">Premis 2:</label>
-            <select id="operand2">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
-        </div>
-        <div class="operasi">
-            <label for="operation">Operasi:</label>
-            <select id="operation">
-                <option value="AND">AND (∧)</option>
-                <option value="OR">OR (∨)</option>
-                <option value="NOT">NOT (¬)</option>
-                <option value="IMPLIKASI">IMPLIKASI (→)</option>
-                <option value="BIIMPLIKASI">BIIMPLIKASI (↔)</option>
-                <option value="EXCLUSIVE OR">EXCLUSIVE OR (⊕)</option>
-            </select>
-            <button onclick="hitung()">Hitung</button>
-        </div>
         <div class="result">
             <h2>Hasil: </h2>
-            <span id="result">-</span>
+            <span id="result">....</span>
         </div>
     </div>
 
