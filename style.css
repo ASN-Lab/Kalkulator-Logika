@@ -11,30 +11,59 @@ h1 {
 }
 
 .container {
-    display: flex;
-    flex-direction: column; /* Mengubah menjadi kolom untuk perangkat kecil */
     max-width: 900px;
     padding: 20px; /* Mengurangi padding untuk perangkat kecil */
     gap: 25px;
     background: #603F26;
-    border: black;
+    border: 5px solid black;
     border-radius: 25px;
-    box-shadow: 0 0 25px rgb(255, 255, 255);
+    box-shadow: 0 0 25px rgb(244, 245, 245);
     margin: auto; /* Centering the container */
 }
 
-.premis, .operasi {
+.utama, .opsi, .result {
     width: 100%; /* Mengubah lebar menjadi 100% */
 }
 
-.premis label, .operasi label {
-    display: block;
+.utama {
+    display: flex;
+    justify-content: space-around;
     color: #FFDBB5;
-    margin: 10px 0 5px;
+}
+
+.premis {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.operasi {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.opsi {
+    display: flex;
+    justify-content: space-around;
+    color: #FFDBB5;
+    margin-top: auto;
+}
+
+.opsi button {
+    width: 100%;
+    text-align: center;
+    background-color: #FFDBB5;
+    border: 3px solid black;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .premis select, .operasi select, .operasi button {
-    width: 100%; /* Mengubah lebar menjadi 100% */
+    width: 100%;  /* Mengubah lebar menjadi 100%  */
     padding: 10px;
     background-color: #FFDBB5;
     color: black;
@@ -44,30 +73,22 @@ h1 {
     text-align: center;
 }
 
-.premis option, .operasi button {
-    background-color: #FFDBB5;
-}
-
-.premis option:hover, .operasi button:hover {
-    background-color: #ffaf59;
-}
-
-.operasi button {
-    height: 50px;
-    margin-top: 25px;
-    text-decoration: double;
-}
-
 .result {
     width: 100%; /* Mengubah lebar menjadi 100% */
-    max-width: 150px; /* Menjaga lebar maksimum */
+    height: 150px;
+    position: relative;
     text-align: center;
     background-color: #FFDBB5;
     color: black;
     border: 3px solid black; 
     border-radius: 25px;
-    padding: 5%;
     margin: auto; /* Centering the result */
+    margin-top: 25px;
+}
+
+.result h2 {
+    text-align: center;
+    position: relative;
 }
 
 /* Media Queries */
