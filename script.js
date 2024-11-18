@@ -24,6 +24,12 @@ function hitung() {
     document.getElementById('result').innerText = result;
 }
 
+function clearResult() {
+    document.getElementById('result').innerText = '....'; // Menghapus hasil
+    document.getElementById('operand1').selectedIndex = 0; // Mengatur ulang operand1
+    document.getElementById('operand2').selectedIndex = 0; // Mengatur ulang operand2
+}
+
 document.getElementById('operation').addEventListener('change', function() {
     const operand2 = document.getElementById('operand2');
     const labelOperand2 = document.getElementById('labelOperand2');
