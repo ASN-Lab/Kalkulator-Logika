@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: #FFEAC5;
     color: #603F26;
     padding: 20px; /* Mengurangi padding untuk perangkat kecil */
@@ -63,6 +63,11 @@ h1 {
     cursor: pointer;
 }
 
+.opsi button:hover {
+    background-color: #603F26;
+    color: #FFDBB5;
+}
+
 .premis select, .operasi select, .operasi button {
     width: 100%;  /* Mengubah lebar menjadi 100%  */
     padding: 10px;
@@ -90,6 +95,10 @@ h1 {
 .result h2 {
     text-align: center;
     position: relative;
+}
+
+.result span {
+    font-size: 40px;
 }
 
 /* Media Queries */

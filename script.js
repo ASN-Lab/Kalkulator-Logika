@@ -25,7 +25,7 @@ function hitung() {
 }
 
 function clearResult() {
-    document.getElementById('result').innerText = '....'; // Menghapus hasil
+    document.getElementById('result').innerText = '.....'; // Menghapus hasil
     document.getElementById('operand1').selectedIndex = 0; // Mengatur ulang operand1
     document.getElementById('operand2').selectedIndex = 0; // Mengatur ulang operand2
 }
