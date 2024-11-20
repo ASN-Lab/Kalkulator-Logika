@@ -1,44 +1,58 @@
-function hitung() {
-    // Ambil nilai dari operand1 dan operand2
-    const operand1 = document.getElementById('operand1').value;
-    const operand2 = document.getElementById('operand2').value;
-    const operation = document.getElementById('operation').value;
+// Variabel untuk menyimpan ekspresi
+let display = document.getElementById('display');
+let isResultDisplayed = false; // Menandai apakah hasil sudah ditampilkan
 
-    let result;
-
-    // Logika untuk operasi
-    if (operation === 'AND') {
-        result = (operand1 === 'true' && operand2 === 'true') ? 'True' : 'False';
-    } else if (operation === 'OR') {
-        result = (operand1 === 'true' || operand2 === 'true') ? 'True' : 'False';
-    } else if (operation === 'NOT') {
-        result = (operand1 === 'true') ? 'False' : 'True';
-    } else if (operation === 'IMPLIKASI') {
-        result = (operand1 === 'true' && operand2 === 'false') ? 'False' : 'True';
-    } else if (operation === 'BIIMPLIKASI') {
-        result = (operand1 === operand2) ? 'True' : 'False';
-    } else if (operation === 'EXCLUSIVE OR') {
-        result = (operand1 !== operand2) ? 'True' : 'False';
+// Fungsi untuk menambahkan karakter ke layar kalkulator
+function appendToDisplay(value) {
+    if (isResultDisplayed) {
+        // Jika hasil sudah ditampilkan, reset layar sebelum memasukkan input baru
+        display.value = '';
+        isResultDisplayed = false; // Reset status
     }
-
-    document.getElementById('result').innerText = result;
+    display.value += value;
 }
 
-function clearResult() {
-    document.getElementById('result').innerText = '.....'; // Menghapus hasil
-    document.getElementById('operand1').selectedIndex = 0; // Mengatur ulang operand1
-    document.getElementById('operand2').selectedIndex = 0; // Mengatur ulang operand2
+// Fungsi untuk menghapus layar kalkulator
+function clearDisplay() {
+    display.value = '';
+    isResultDisplayed = false; // Reset status
 }
 
-document.getElementById('operation').addEventListener('change', function() {
-    const operand2 = document.getElementById('operand2');
-    const labelOperand2 = document.getElementById('labelOperand2');
+// Fungsi untuk mengevaluasi ekspresi logika
+function calculateResult() {
+    try {
+        // Deklarasikan nilai logika untuk variabel
+        const variables = {
+            P: true,
+            Q: true,
+            R: true,
+            S: true,
+            T: true,
+            U: true
+        };
 
-    if (this.value === 'NOT') {
-        operand2.style.display = 'none'; // Sembunyikan operand2
-        labelOperand2.style.display = 'none'; // Sembunyikan label operand2
-    } else {
-        operand2.style.display = 'block'; // Tampilkan operand2
-        labelOperand2.style.display = 'block'; // Tampilkan label operand2
+        // Ganti simbol logika dengan operator JavaScript
+        let expression = display.value
+            .replace(/∧/g, '&&')   // AND
+            .replace(/∨/g, '||')   // OR
+            .replace(/¬/g, '!')    // NOT
+            .replace(/⊕/g, '^')    // XOR
+            .replace(/↔/g, '==='); // IFF
+
+        // Ganti variabel logika dengan nilai boolean
+        for (const [key, value] of Object.entries(variables)) {
+            expression = expression.replace(new RegExp(key, 'g'), value);
+        }
+
+        // Evaluasi ekspresi logika
+        const result = eval(expression);
+
+        // Tampilkan hasilnya
+        display.value = result;
+        isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
+    } catch (error) {
+        // Tampilkan pesan kesalahan jika ada
+        display.value = 'Hello, world!';
+        isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     }
-});
+}

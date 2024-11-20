@@ -3,54 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Logika | Logika Matematika</title>
-    <link rel="icon" type="image/png" href="Asset/Logo.png">
-
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png" href="Asset/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="Asset/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Asset/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Asset/favicon-16x16.png">
+    <link rel="manifest" href="Asset/site.webmanifest">
+
+    <title>Kalkulator Logika</title>
 </head>
 <body>
-    <h1>Kalkulator Logika Matematika Kelompok 7</h1>
-
     <div class="container">
-        <div class="utama">
-            <div class="premis">
-                <label for="operand1">Premis 1:</label>
-                <select id="operand1">
-                    <option value="true">True</option>
-                    <option value="false">False</option>
-                </select>
-            
-                <label for="operand2" id="labelOperand2">Premis 2:</label>
-                <select id="operand2">
-                    <option value="true">True</option>
-                    <option value="false">False</option>
-                </select>
+        <img src="Asset/gambar.png" alt="judul">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button class="button" onclick="appendToDisplay('↔')">↔</button>
+                <button class="button" onclick="appendToDisplay('⊕')">⊕</button>
+                <button class="button" onclick="appendToDisplay('∨')">∨</button>
+                <button class="button" onclick="appendToDisplay('∧')">∧</button>
+                <button class="button" onclick="appendToDisplay('P')">P</button>
+                <button class="button" onclick="appendToDisplay('Q')">Q</button>
+                <button class="button" onclick="appendToDisplay('(')">(</button>
+                <button class="button" onclick="appendToDisplay(')')">)</button>
+                <button class="button" onclick="appendToDisplay('R')">R</button>
+                <button class="button" onclick="appendToDisplay('S')">S</button>
+                <button class="button" onclick="appendToDisplay('¬')">¬</button>
+                <button class="button" onclick="appendToDisplay('↔')">↔</button>
+                <button class="button" onclick="appendToDisplay('T')">T</button>
+                <button class="button" onclick="appendToDisplay('U')">U</button>
+                <button class="button" id="delete" onclick="clearDisplay()">C</button>
+                <button class="button" id="hasil" onclick="calculateResult()">=</button>
             </div>
-            <div class="operasi">
-                <label for="operation">Operasi:</label>
-                <select id="operation">
-                    <option value="AND">AND (∧)</option>
-                    <option value="OR">OR (∨)</option>
-                    <option value="NOT">NOT (¬)</option>
-                    <option value="IMPLIKASI">IMPLIKASI (→)</option>
-                    <option value="BIIMPLIKASI">BIIMPLIKASI (↔)</option>
-                    <option value="EXCLUSIVE OR">EXCLUSIVE OR (⊕)</option>
-                </select>
-                <div class="opsi">
-                    <button id="deleteButton" onclick="clearResult()">Hapus</button>
-                    <button onclick="hitung()">Hitung</button>
-                </div>
-            </div>
-        </div>
-
-
-        
-        <div class="result">
-            <h2>Hasil: </h2>
-            <span id="result">.....</span>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
