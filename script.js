@@ -23,12 +23,8 @@ function calculateResult() {
     try {
         // Deklarasikan nilai logika untuk variabel
         const variables = {
-            P: true,
-            Q: true,
-            R: true,
-            S: true,
-            T: true,
-            U: true
+            F: false,
+            T: true
         };
 
         // Ganti simbol logika dengan operator JavaScript
@@ -37,7 +33,7 @@ function calculateResult() {
             .replace(/∨/g, '||')   // OR
             .replace(/¬/g, '!')    // NOT
             .replace(/⊕/g, '^')    // XOR
-            .replace(/↔/g, '==='); // IFF
+            .replace(/↔/g, '==='); // BIIMPLIKASI
 
         // Ganti variabel logika dengan nilai boolean
         for (const [key, value] of Object.entries(variables)) {
@@ -52,7 +48,7 @@ function calculateResult() {
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     } catch (error) {
         // Tampilkan pesan kesalahan jika ada
-        display.value = 'Hello, world!';
+        display.value = 'Operasi tidak valid';
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     }
 }

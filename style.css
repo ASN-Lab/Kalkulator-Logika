@@ -47,13 +47,7 @@ img {
     margin-bottom: 10px;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-    margin-top: 10px;
-}
-
+/* Gaya untuk tombol */
 .button {
     width: 100%;
     padding: 20px;
@@ -70,11 +64,34 @@ img {
     background-color: #b9b9b9;
 }
 
+/* Styling untuk div nilai dan command */
+.nilai, .command {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 40px;
+}
+
+.nilai button, .command button {
+    flex: 1; /* Membuat tombol dalam div ini memiliki lebar yang sama */
+    border-radius: 10px;
+    padding: 10px; /* Padding yang lebih kecil untuk tombol dalam div ini */
+}
+
+/* Tombol khusus untuk delete dan hasil */
 #delete, #hasil {
     background-color: #F96E2A;
 }
 
-/* Media Queries */
+/* Grid untuk tombol kalkulator */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+/* Media Queries untuk responsivitas */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -98,5 +115,9 @@ img {
     .button {
         padding: 15px;
         font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px; /* Mengurangi padding untuk perangkat kecil */
     }
 }
