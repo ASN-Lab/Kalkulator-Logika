@@ -1,12 +1,16 @@
 body { 
     font-family: 'Segoe UI', sans-serif;
-    background-color: #78B3CE;
+    background-color: #0A1D3C;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .container {
@@ -22,84 +26,80 @@ body {
 
 img {
     width: 100%;
-    max-width: 500px;
+    max-width: 470px;
     height: auto;
 }
 
 .calculator {
     width: 100%;
     max-width: 400px;
-    background-color: #C9E6F0;
-    border: 5px solid black;
+    background-color: #1E2A47;
+    border: 5px solid #00BFFF;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    color: azure;
-    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    color: #E0E0E0;
+    padding: 5% 2%;
 }
 
 #display {
-    font-size: 24px;
-    border: 2px solid #FBF8EF;
-    background-color: #FBF8EF;
+    font-size: 3vw;
+    border: 2px solid #00BFFF;
+    background-color: #2A2D3D;
+    color: #FFFFFF;
     width: 96%;
-    height: 50px;
+    height: 10vh;
     border-radius: 10px;
     margin-bottom: 10px;
 }
-
-/* Gaya untuk tombol */
 .button {
     width: 100%;
-    padding: 20px;
-    font-size: 20px;
-    background-color: #FBF8EF;
+    padding: 10%;
+    font-size: 2vw;
+    background-color: #3B4A6E;
     border: none;
     border-radius: 10px;
-    color: #000000;
+    color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #b9b9b9;
+    background-color: #5A6A8A;
 }
 
-/* Styling untuk div nilai dan command */
 .nilai, .command {
     display: flex;
     gap: 5px;
     width: 100%;
-    height: 40px;
+    height: 8vh;
     margin-top: 10px;
 }
 
 .nilai button, .command button {
-    flex: 1; /* Membuat tombol dalam div ini memiliki lebar yang sama */
+    flex: 1;
     border-radius: 10px;
-    padding: 10px; /* Padding yang lebih kecil untuk tombol dalam div ini */
+    padding: 2%;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 #F {
-    background-color: #CD1818;
+    background-color: #FF4C4C;
 }
 
 #T {
-    background-color: #116D6E;
+    background-color: #0E7C7C;
 }
 
-/* Tombol khusus untuk delete dan hasil */
 #delete, #hasil {
-    background-color: #F96E2A;
+    background-color: #FF8C00;
 }
 
 #delete:hover, #hasil:hover {
-    background-color: #ab4c1c;
+    background-color: #FF6F00;
     color: #FBF8EF;
 }
 
-/* Grid untuk tombol kalkulator */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -107,8 +107,7 @@ img {
     margin-top: 10px;
 }
 
-/* Media Queries untuk responsivitas */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .container {
         flex-direction: column;
         align-items: center;
@@ -116,10 +115,86 @@ img {
 
     img {
         max-width: 80%;
+        transform: translateY(50%);
+        z-index: -1;
     }
 
     .calculator {
         width: 100%;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .calculator {
+        max-width: 350px;
+    }
+
+    #display {
+        font-size: 2.5vw;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        transform: translate(-3%, -10%);
+    }
+
+    img {
+        max-width: 80%;
+        transform: translateY(50%);
+        z-index: -1;
+    }
+
+    .calculator {
+        width: 100%;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .calculator {
+        max-width: 300px;
+    }
+
+    #display {
+        font-size: 2vw;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px;
     }
 }
 
@@ -129,11 +204,30 @@ img {
     }
 
     .button {
-        padding: 15px;
+        padding: 10px;
         font-size: 18px;
     }
 
     .nilai button, .command button {
-        padding: 8px; /* Mengurangi padding untuk perangkat kecil */
+        padding: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .calculator {
+        max-width: 250px;
+    }
+
+    #display {
+        font-size: 18px;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .nilai button, .command button {
+        padding: 8px;
     }
 }
