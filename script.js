@@ -29,10 +29,11 @@ function calculateResult() {
 
         // Ganti simbol logika dengan operator JavaScript
         let expression = display.value
-            .replace(/∧/g, '&&')   // AND
-            .replace(/∨/g, '||')   // OR
-            .replace(/¬/g, '!')    // NOT
-            .replace(/⊕/g, '^')    // XOR
+            .replace(/∧/g, '&&') // AND
+            .replace(/∨/g, '||') // OR
+            .replace(/¬/g, '!') // NOT
+            .replace(/⊕/g, '^') // XOR
+            .replace(/→/g, '|| !') // IMPLIES (A → B = !A || B)
             .replace(/↔/g, '==='); // BIIMPLIKASI
 
         // Ganti variabel logika dengan nilai boolean
