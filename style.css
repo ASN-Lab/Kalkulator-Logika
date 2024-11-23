@@ -67,6 +67,20 @@ img {
     background-color: #5A6A8A;
 }
 
+.button, .nilai button, .command button, #delete, #hasil {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover, .nilai button:hover, .command button:hover, #delete:hover, #hasil:hover {
+    background-color: #FF6F00;
+    color: #FBF8EF;
+    transform: scale(0.95);
+}
+
+.button:active, .nilai button:active, .command button:active, #delete:active, #hasil:active {
+    transform: scale(0.9);
+}
+
 .nilai, .command {
     display: flex;
     gap: 5px;
