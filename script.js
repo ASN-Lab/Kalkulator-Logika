@@ -54,7 +54,8 @@ function calculateResult() {
         display.value = result;
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     } catch (error) {
-        // Tampilkan pesan kesalahan jika ada
+        // Jika terjadi kesalahan, tampilkan pesan kesalahan
+        display.style.fontWeight = 'bold';
         display.value = 'Error!';
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     }
