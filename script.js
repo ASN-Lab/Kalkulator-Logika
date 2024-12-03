@@ -41,17 +41,14 @@ function calculateResult() {
             );
         }
 
-        // Tangani XOR (karena JavaScript tidak memiliki operator langsung untuk XOR)
-        expression = expression.replace(/true \^ true/g, 'false')
-            .replace(/true \^ false/g, 'true')
-            .replace(/false \^ true/g, 'true')
-            .replace(/false \^ false/g, 'false');
+        // Tangani XOR
+        expression = handleXOR(expression);
 
         // Evaluasi ekspresi logika
         const result = eval(expression);
 
         // Tampilkan hasilnya
-        display.value = result;
+        display.value = result ? 'true' : 'false'; // Pastikan menampilkan 'true' atau 'false'
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     } catch (error) {
         // Jika terjadi kesalahan, tampilkan pesan kesalahan
@@ -59,4 +56,19 @@ function calculateResult() {
         display.value = 'Error!';
         isResultDisplayed = true; // Tandai bahwa hasil telah ditampilkan
     }
+}
+
+// Fungsi untuk menangani XOR dengan benar
+function handleXOR(expression) {
+    // Gunakan regular expression untuk mengganti operator XOR dengan implementasi XOR boolean
+    return expression.replace(/(true|false)\s*\^(\s*(true|false))/g, (match, p1, p2, p3) => {
+        const val1 = p1 === 'true';  // Ubah 'true' menjadi boolean true
+        const val2 = p3 === 'true';  // Ubah 'false' menjadi boolean false
+
+        // XOR logic: (A ^ B) = (A OR B) AND NOT (A AND B)
+        const xorResult = (val1 || val2) && !(val1 && val2);
+        
+        // Kembalikan hasil XOR sebagai 'true' atau 'false'
+        return xorResult ? 'true' : 'false';
+    });
 }
